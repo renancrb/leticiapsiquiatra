@@ -80,7 +80,7 @@ body {
 .hero {
     padding: 120px 0 80px;
     background: var(--gradient);
-    color: var(--white);
+    color: var(--text-light);
     min-height: 100vh;
     display: flex;
     align-items: center;
