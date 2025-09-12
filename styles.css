@@ -131,8 +131,8 @@ body {
 }
 
 .btn-primary {
-    background: var(--white);
-    color: var(--primary-dark);
+    background: var(--primary-dark);
+    color: var(--white);
 }
 
 .btn-primary:hover {
@@ -143,8 +143,8 @@ body {
 
 .btn-secondary {
     background: transparent;
-    color: var(--white);
-    border: 2px solid var(--white);
+    color: var(--primary-dark);
+    border: 2px solid var(--primary-dark);
 }
 
 .btn-secondary:hover {
@@ -417,7 +417,7 @@ body {
 .cta-section {
     padding: 80px 0;
     background: var(--gradient);
-    color: var(--white);
+    color: var(--text-light);
     text-align: center;
 }
 
