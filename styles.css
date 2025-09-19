@@ -55,7 +55,7 @@ body {
 }
 
 .logo p {
-    font-size: 0.875rem;
+    font-size: 1.0rem;
     color: var(--text-light);
     font-weight: 500;
 }
