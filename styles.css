@@ -412,52 +412,56 @@ body {
 .rating-text {
     color: var(--text-light);
 }
-/* Estilos gerais da seção FAQ */
+/* FAQ Section */
 .faq {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+  padding: 80px 0;
+  background: var(--secondary-color);
 }
 
 .faq h2 {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--text-dark);
 }
 
-/* Perguntas */
 .faq-item {
-  border-bottom: 1px solid #ddd;
-  padding: 15px 0;
+  background: var(--white);
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 .faq-question {
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1.25rem;
+  font-weight: 600;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #444;
+  color: var(--primary-dark);
   transition: color 0.3s;
 }
 
 .faq-question:hover {
-  color: #0073e6;
+  color: var(--primary-color);
 }
 
-/* Respostas */
 .faq-answer {
-  margin-top: 10px;
-  font-size: 1rem;
-  color: #666;
-  display: none; /* padrão: escondida */
-  line-height: 1.5;
+  margin-top: 0.75rem;
+  font-size: 1.05rem;
+  color: var(--text-light);
+  display: none;
+  line-height: 1.6;
 }
 
-/* Ativar resposta */
 .faq-item.active .faq-answer {
   display: block;
 }
@@ -466,13 +470,16 @@ body {
 .faq-question::after {
   content: "+";
   font-size: 1.5rem;
-  transition: transform 0.3s;
+  color: var(--primary-light);
+  transition: transform 0.3s, color 0.3s;
 }
 
 .faq-item.active .faq-question::after {
   content: "-";
+  color: var(--primary-dark);
   transform: rotate(180deg);
 }
+
 
 /* CTA Section */
 .cta-section {
