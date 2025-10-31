@@ -111,6 +111,7 @@ body {
     font-size: 1.25rem;
     margin-bottom: 2rem;
     opacity: 0.9;
+    color: var(--text-dark);
 }
 
 .cta-buttons {
@@ -212,7 +213,7 @@ body {
 .pain-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: var(--primary-dark);
 }
 
 .cta-center {
@@ -344,7 +345,7 @@ body {
     border-bottom: none;
 }
 
-/* Testimonials Section */
+/* Testimonials Section (Doctoralia) */
 .testimonials {
     padding: 80px 0;
     background: var(--secondary-color);
@@ -356,6 +357,73 @@ body {
     margin-bottom: 3rem;
     color: var(--primary-dark);
 }
+
+/* Estilos do carrossel de fallback */
+.testimonial-carousel {
+    position: relative;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.testimonial-carousel .slides {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: var(--white);
+}
+
+.testimonial-carousel .slide {
+    display: none;
+}
+
+.testimonial-carousel .slide.active {
+    display: block;
+}
+
+.testimonial-carousel img {
+    width: 100%;
+    display: block;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-dark);
+    color: var(--white);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.carousel-control.prev { left: 12px; }
+.carousel-control.next { right: 12px; }
+
+.carousel-control:hover { background: #594aa0; }
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.carousel-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-dark);
+    background: transparent;
+    cursor: pointer;
+}
+
+.carousel-dots .dot.active { background: var(--primary-dark); }
 
 .testimonials-grid {
     display: grid;
@@ -497,6 +565,7 @@ body {
 .cta-content h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: var(--primary-dark);
 }
 
 .cta-content p {
@@ -623,4 +692,9 @@ body {
   .quadro-faq-item { padding: 1.25rem 1.25rem; }
   .quadro-faq-question { font-size: 1.0625rem; }
   .quadro-faq-answer { font-size: 0.9875rem; line-height: 1.65; }
+}
+
+@media (max-width: 768px) {
+    .testimonial-carousel { max-width: 100%; }
+    .carousel-control { width: 36px; height: 36px; }
 }
