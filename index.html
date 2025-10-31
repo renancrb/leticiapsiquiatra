@@ -201,6 +201,7 @@
         </div>
     </section>
 <!-- FAQ Section -->
+<<<<<<< HEAD
 <section class="faq">
     <div class="container">
         <h2>Perguntas Frequentes</h2>
@@ -273,6 +274,71 @@ document.querySelectorAll('.faq-question').forEach(button => {
     });
 });
 </script>
+=======
+    <section class="faq">
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">Para quem é indicado o tratamento psiquiátrico?</button>
+                    <div class="faq-answer">
+                        <p>O tratamento é indicado para pessoas que enfrentam sintomas como ansiedade, estresse constante, alterações de humor, insônia, dificuldade de concentração, irritabilidade, dependências, sintomas psicóticos e situações semelhantes.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Quais idades são atendidas?</button>
+                    <div class="faq-answer">
+                        <p>Atendimento online para adolescentes a partir de 13 anos e adultos de todas as idades.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Como funciona a primeira consulta?</button>
+                    <div class="faq-answer">
+                        <p>Na primeira sessão, é feito um levantamento completo da história do paciente, aspectos emocionais, físicos, estilo de vida e histórico médico. O objetivo é criar um ambiente de confiança e compreensão para elaborar o plano de tratamento mais adequado.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Como é estruturado o plano de tratamento?</button>
+                    <div class="faq-answer">
+                        <p>O plano pode incluir uso de medicação (quando indicado), consultas regulares, indicação de psicoterapia, práticas integrativas (relaxamento, meditação, mudanças no estilo de vida) e, em alguns casos, medicamentos à base de Cannabis ou estratégias de redução de danos.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Quanto custa a consulta e qual a duração?</button>
+                    <div class="faq-answer">
+                        <p>A consulta online tem duração de 1 hora e o valor é de <strong>R$400</strong>, com agendamento feito via Doctoralia.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">O tratamento termina após a primeira consulta?</button>
+                    <div class="faq-answer">
+                        <p>Não. O tratamento é contínuo, com consultas regulares para monitorar evolução, avaliar resposta às medicações/terapias e fazer ajustes conforme necessário.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Como funciona a solicitação de receitas e documentos?</button>
+                    <div class="faq-answer">
+                        <p>As solicitações devem ser feitas com pelo menos <strong>5 dias úteis de antecedência</strong>.<br>Receitas simples são enviadas online em PDF. Receitas de medicamentos controlados são enviadas via correspondência.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Como funciona o contato entre consultas?</button>
+                    <div class="faq-answer">
+                        <p>Os pacientes têm acesso a um WhatsApp exclusivo para contato, disponível de segunda a sexta-feira, das 9h às 18h.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const item = button.parentElement;
+            item.classList.toggle('active');
+        });
+    });
+    </script>
+>>>>>>> e9ec35f (Adiciona seção FAQ com visual integrado e acordeão ao site)
 
     <!-- CTA Section -->
     <section id="agendar" class="cta-section">
