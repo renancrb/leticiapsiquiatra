@@ -131,25 +131,25 @@ body {
 }
 
 .btn-primary {
-    background: var(--white);
-    color: var(--primary-dark);
+    background: var(--primary-dark);
+    color: var(--white);
 }
 
 .btn-primary:hover {
-    background: #f3f4f6;
+    background: #594aa0; /* tom um pouco mais escuro */
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary {
-    background: transparent;
-    color: var(--white);
-    border: 2px solid var(--white);
+    background: var(--white);
+    color: var(--primary-dark);
+    border: 2px solid var(--primary-dark);
 }
 
 .btn-secondary:hover {
-    background: var(--white);
-    color: var(--primary-color);
+    background: var(--primary-dark);
+    color: var(--white);
 }
 
 .btn-large {
@@ -444,22 +444,46 @@ body {
 }
 
 .quadro-faq-question {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 700;
   color: var(--primary-dark);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
   letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+/* Seta indicativa do acordeão */
+.quadro-faq-question::after {
+  content: '\25B6'; /* triângulo para a direita */
+  font-size: 0.9rem;
+  color: var(--primary-dark);
+  margin-left: 0.75rem;
+  transition: transform 0.25s ease;
+}
+
+.quadro-faq-item.active .quadro-faq-question::after {
+  transform: rotate(90deg); /* seta apontando para baixo */
 }
 
 .quadro-faq-answer {
-  font-size: 1.0625rem;
+  font-size: 1rem;
   color: var(--text-light);
-  line-height: 1.75;
+  line-height: 1.7;
+  margin-top: 0.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
 }
 
-/* Remoção do acordeão e fixação visual */
-.faq-question::after { content: none !important; }
-.faq-answer { display: block; }
+.quadro-faq-item.active .quadro-faq-answer {
+  max-height: 500px; /* suficiente para conteúdos curtos */
+}
+
+/* Acordeão ativo no FAQ */
+/* Removemos quaisquer resets que ocultavam a seta/estado */
 
 /* CTA Section */
 .cta-section {
@@ -596,6 +620,6 @@ body {
 @media (max-width: 768px) {
   .faq-list { gap: 1rem; }
   .quadro-faq-item { padding: 1.25rem 1.25rem; }
-  .quadro-faq-question { font-size: 1.125rem; margin-bottom: 0.5rem; }
-  .quadro-faq-answer { font-size: 1rem; line-height: 1.7; }
+  .quadro-faq-question { font-size: 1.0625rem; }
+  .quadro-faq-answer { font-size: 0.9875rem; line-height: 1.65; }
 }

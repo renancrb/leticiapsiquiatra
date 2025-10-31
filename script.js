@@ -107,6 +107,35 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Acordeão do FAQ
+    const faqItems = document.querySelectorAll('.quadro-faq .quadro-faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.quadro-faq-question');
+        const answer = item.querySelector('.quadro-faq-answer');
+        if (!question || !answer) return;
+
+        // Estado inicial: colapsado
+        item.classList.remove('active');
+        question.setAttribute('role', 'button');
+        question.setAttribute('tabindex', '0');
+        question.setAttribute('aria-expanded', 'false');
+        answer.setAttribute('aria-hidden', 'true');
+
+        const toggle = () => {
+            const isActive = item.classList.toggle('active');
+            question.setAttribute('aria-expanded', String(isActive));
+            answer.setAttribute('aria-hidden', String(!isActive));
+        };
+
+        question.addEventListener('click', toggle);
+        question.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggle();
+            }
+        });
+    });
 });
 
 // Carregar widget do Doctoralia (substitua pelos IDs reais quando disponíveis)
