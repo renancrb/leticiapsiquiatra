@@ -10,11 +10,7 @@
     --primary-light: #b7aef0;
     --primary-dark: #6a5bb1;
     --secondary-color: #f7f7fb; /* mais claro e acolhedor */
-<<<<<<< HEAD
-    --accent-color: #b7aef0; /* lilás claro */
-=======
     --accent-color: #d8c9ff; /* lilás clarinho */
->>>>>>> e9ec35f (Adiciona seção FAQ com visual integrado e acordeão ao site)
     --text-dark: #1f2937;
     --text-light: #6b7280;
     --white: #ffffff;
@@ -59,11 +55,7 @@ body {
 }
 
 .logo p {
-<<<<<<< HEAD
-    font-size: 1.0rem;
-=======
     font-size: 0.875rem;
->>>>>>> e9ec35f (Adiciona seção FAQ com visual integrado e acordeão ao site)
     color: var(--text-light);
     font-weight: 500;
 }
@@ -88,11 +80,7 @@ body {
 .hero {
     padding: 120px 0 80px;
     background: var(--gradient);
-<<<<<<< HEAD
-    color: var(--text-light);
-=======
     color: var(--white);
->>>>>>> e9ec35f (Adiciona seção FAQ com visual integrado e acordeão ao site)
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -143,13 +131,8 @@ body {
 }
 
 .btn-primary {
-<<<<<<< HEAD
-    background: var(--primary-dark);
-    color: var(--white);
-=======
     background: var(--white);
     color: var(--primary-dark);
->>>>>>> e9ec35f (Adiciona seção FAQ com visual integrado e acordeão ao site)
 }
 
 .btn-primary:hover {
@@ -160,13 +143,8 @@ body {
 
 .btn-secondary {
     background: transparent;
-<<<<<<< HEAD
-    color: var(--primary-dark);
-    border: 2px solid var(--primary-dark);
-=======
     color: var(--white);
     border: 2px solid var(--white);
->>>>>>> e9ec35f (Adiciona seção FAQ com visual integrado e acordeão ao site)
 }
 
 .btn-secondary:hover {
@@ -434,87 +412,57 @@ body {
 .rating-text {
     color: var(--text-light);
 }
-<<<<<<< HEAD
-/* FAQ Section */
-.faq {
+
+/* FAQ Section - Quadro Fixo */
+.quadro-faq {
   padding: 80px 0;
   background: var(--secondary-color);
 }
 
-.faq h2 {
+.quadro-faq h2 {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
   color: var(--text-dark);
 }
 
-.faq-item {
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quadro-faq-item {
   background: var(--white);
-  border-radius: 15px;
-  margin-bottom: 1rem;
-  padding: 1.25rem 1.5rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 18px;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 6px 24px rgba(124, 106, 199, 0.07);
+  border: 1.5px solid var(--primary-light);
+  transition: box-shadow 0.3s;
 }
 
-.faq-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
-.faq-question {
-  font-size: 1.25rem;
-  font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.quadro-faq-question {
+  font-size: 1.18rem;
+  font-weight: 700;
   color: var(--primary-dark);
-  transition: color 0.3s;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.01em;
 }
 
-.faq-question:hover {
-  color: var(--primary-color);
-}
-
-.faq-answer {
-  margin-top: 0.75rem;
+.quadro-faq-answer {
   font-size: 1.05rem;
   color: var(--text-light);
-  display: none;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-.faq-item.active .faq-answer {
-  display: block;
-}
-
-/* Ícones de abrir/fechar */
-.faq-question::after {
-  content: "+";
-  font-size: 1.5rem;
-  color: var(--primary-light);
-  transition: transform 0.3s, color 0.3s;
-}
-
-.faq-item.active .faq-question::after {
-  content: "-";
-  color: var(--primary-dark);
-  transform: rotate(180deg);
-}
-
-=======
->>>>>>> e9ec35f (Adiciona seção FAQ com visual integrado e acordeão ao site)
+/* Remove estilos de acordeão */
+.faq-question, .faq-question::after, .faq-item.active .faq-answer, .faq-answer { all: unset; }
 
 /* CTA Section */
 .cta-section {
     padding: 80px 0;
     background: var(--gradient);
-<<<<<<< HEAD
-    color: var(--text-light);
-=======
     color: var(--white);
->>>>>>> e9ec35f (Adiciona seção FAQ com visual integrado e acordeão ao site)
     text-align: center;
 }
 
@@ -548,98 +496,6 @@ body {
     font-size: 1.5rem;
 }
 
-<<<<<<< HEAD
-=======
-/* FAQ Section */
-.faq {
-    padding: 80px 0;
-    background: var(--secondary-color);
-}
-
-.faq h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: var(--text-dark);
-}
-
-.faq-list {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.faq-item {
-    background: var(--white);
-    border-radius: 16px;
-    box-shadow: 0 6px 24px rgba(124, 106, 199, 0.07);
-    overflow: hidden;
-    transition: box-shadow 0.3s;
-}
-
-.faq-item.active {
-    box-shadow: 0 12px 32px rgba(124, 106, 199, 0.13);
-}
-
-.faq-question {
-    width: 100%;
-    background: none;
-    border: none;
-    outline: none;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    padding: 1.5rem 2rem;
-    text-align: left;
-    cursor: pointer;
-    transition: background 0.2s;
-    position: relative;
-}
-
-.faq-question::after {
-    content: '+';
-    position: absolute;
-    right: 2rem;
-    font-size: 1.5rem;
-    color: var(--primary-light);
-    transition: transform 0.3s;
-}
-
-.faq-item.active .faq-question::after {
-    content: '-';
-    transform: rotate(180deg);
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    background: var(--secondary-color);
-    color: var(--text-dark);
-    padding: 0 2rem;
-    font-size: 1.1rem;
-    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s;
-}
-
-.faq-item.active .faq-answer {
-    max-height: 500px;
-    padding: 0 2rem 1.5rem 2rem;
-}
-
-.faq-answer p {
-    margin: 0;
-    color: var(--text-light);
-}
-
-@media (max-width: 600px) {
-    .faq-question, .faq-answer {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-}
-
->>>>>>> e9ec35f (Adiciona seção FAQ com visual integrado e acordeão ao site)
 /* Footer */
 .footer {
     background: var(--text-dark);
