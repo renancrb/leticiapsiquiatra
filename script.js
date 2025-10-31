@@ -107,22 +107,189 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Acordeão do FAQ
+    const faqItems = document.querySelectorAll('.quadro-faq .quadro-faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.quadro-faq-question');
+        const answer = item.querySelector('.quadro-faq-answer');
+        if (!question || !answer) return;
+
+        // Estado inicial: colapsado
+        item.classList.remove('active');
+        question.setAttribute('role', 'button');
+        question.setAttribute('tabindex', '0');
+        question.setAttribute('aria-expanded', 'false');
+        answer.setAttribute('aria-hidden', 'true');
+
+        const toggle = () => {
+            const isActive = item.classList.toggle('active');
+            question.setAttribute('aria-expanded', String(isActive));
+            answer.setAttribute('aria-hidden', String(!isActive));
+        };
+
+        question.addEventListener('click', toggle);
+        question.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggle();
+            }
+        });
+    });
 });
 
 // Carregar widget do Doctoralia (substitua pelos IDs reais quando disponíveis)
 function addDoctoraliaCode() {
-    // Insira aqui o script oficial do Doctoralia quando tiver o código.
-    // Fallback: exibe link já presente na seção.
     const container = document.getElementById('doctoralia-widget');
     if (!container) return;
 
-    // Exemplo de injeção de script (comente removendo quando usar o real)
-    // const script = document.createElement('script');
-    // script.src = 'https://www.doctoralia.com.br/widget.js';
-    // script.async = true;
-    // script.onload = () => { /* inicializar widget aqui */ };
-    // container.innerHTML = '';
-    // container.appendChild(script);
+    // Limpa placeholder
+    container.innerHTML = '';
+
+    // Cria âncora oficial do Doctoralia
+    const anchor = document.createElement('a');
+    anchor.id = 'zl-url';
+    anchor.className = 'zl-url';
+    anchor.href = 'https://www.doctoralia.com.br/leticia-coelho-3/psiquiatra/sao-miguel-do-araguaia';
+    anchor.rel = 'nofollow';
+    anchor.setAttribute('data-zlw-doctor', 'leticia-coelho-3');
+    anchor.setAttribute('data-zlw-type', 'certificate');
+    anchor.setAttribute('data-zlw-opinion', 'false');
+    anchor.setAttribute('data-zlw-hide-branding', 'true');
+    anchor.setAttribute('data-zlw-saas-only', 'true');
+    anchor.setAttribute('data-zlw-a11y-title', 'Widget de marcação de consultas médicas');
+    anchor.textContent = 'Letícia Coelho - Doctoralia.com.br';
+
+    container.appendChild(anchor);
+
+    // Script oficial do Docplanner/Doctoralia
+    const scriptId = 'zl-widget-s';
+    if (document.getElementById(scriptId)) {
+        // Script já presente; nada a fazer
+        return;
+    }
+
+    const script = document.createElement('script');
+    script.id = scriptId;
+    script.src = '//platform.docplanner.com/js/widget.js';
+    script.async = true;
+
+    let loaded = false;
+    const timeoutMs = 8000; // aguarda até 8s
+    const timeout = setTimeout(() => {
+        if (!loaded) {
+            // Fallback para o carrossel
+            container.innerHTML = '';
+            renderFallbackCarousel(container);
+        }
+    }, timeoutMs);
+
+    script.onload = () => {
+        loaded = true;
+        clearTimeout(timeout);
+        // O script inicializa automaticamente o widget baseado no anchor
+    };
+
+    script.onerror = () => {
+        clearTimeout(timeout);
+        container.innerHTML = '';
+        renderFallbackCarousel(container);
+    };
+
+    // Insere antes do primeiro script, seguindo o snippet oficial
+    const firstScript = document.getElementsByTagName('script')[0];
+    firstScript.parentNode.insertBefore(script, firstScript);
+}
+
+// Fallback: carrossel de imagens fixas
+function renderFallbackCarousel(container) {
+    const images = [
+        'dra-leticia.jpg',
+        'consultorio.jpg',
+        'consultorio2.jpg'
+    ];
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'testimonial-carousel';
+
+    const slides = document.createElement('div');
+    slides.className = 'slides';
+
+    images.forEach((src, index) => {
+        const slide = document.createElement('div');
+        slide.className = 'slide';
+        if (index === 0) slide.classList.add('active');
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = 'Depoimentos';
+        img.loading = 'lazy';
+        slide.appendChild(img);
+        slides.appendChild(slide);
+    });
+
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'carousel-control prev';
+    prevBtn.setAttribute('aria-label', 'Anterior');
+    prevBtn.textContent = '‹';
+
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'carousel-control next';
+    nextBtn.setAttribute('aria-label', 'Próximo');
+    nextBtn.textContent = '›';
+
+    const dots = document.createElement('div');
+    dots.className = 'carousel-dots';
+
+    images.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.className = 'dot' + (index === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', `Ir para slide ${index + 1}`);
+        dot.addEventListener('click', () => goTo(index));
+        dots.appendChild(dot);
+    });
+
+    wrapper.appendChild(slides);
+    wrapper.appendChild(prevBtn);
+    wrapper.appendChild(nextBtn);
+    wrapper.appendChild(dots);
+    container.appendChild(wrapper);
+
+    let current = 0;
+    let autoTimer = null;
+
+    function update() {
+        const allSlides = slides.querySelectorAll('.slide');
+        const allDots = dots.querySelectorAll('.dot');
+        allSlides.forEach((s, i) => s.classList.toggle('active', i === current));
+        allDots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    function goTo(index) {
+        current = (index + images.length) % images.length;
+        update();
+        restartAuto();
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    function startAuto() {
+        stopAuto();
+        autoTimer = setInterval(next, 5000);
+    }
+    function stopAuto() {
+        if (autoTimer) clearInterval(autoTimer);
+        autoTimer = null;
+    }
+    function restartAuto() { startAuto(); }
+
+    nextBtn.addEventListener('click', next);
+    prevBtn.addEventListener('click', prev);
+    wrapper.addEventListener('mouseenter', stopAuto);
+    wrapper.addEventListener('mouseleave', startAuto);
+
+    update();
+    startAuto();
 }
 
 // Função para preload de imagens importantes

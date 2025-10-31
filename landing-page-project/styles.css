@@ -1,0 +1,129 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.hero {
+    background: url('images/dra-leticia2.JPG') no-repeat center center/cover;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+}
+
+.pain-points, .about, .conditions, .testimonials, .faq, .cta-section {
+    padding: 60px 0;
+}
+
+.pain-grid, .conditions-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pain-card, .condition-category {
+    flex: 1;
+    margin: 0 10px;
+    background: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+}
+
+.cta-section {
+    background-color: #e9ecef;
+    text-align: center;
+}
+
+.cta-features {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.feature {
+    margin: 0 15px;
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: #25D366; /* WhatsApp green */
+    transition: background-color 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E; /* Darker green on hover */
+}
+
+.quadro-faq {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.quadro-faq-item {
+    margin-bottom: 15px;
+}
+
+.quadro-faq-question {
+    font-weight: bold;
+}
+
+.quadro-faq-answer {
+    margin-top: 5px;
+}
