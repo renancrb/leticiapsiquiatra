@@ -81,7 +81,7 @@ body {
 .hero {
     padding: 120px 0 80px;
     background: var(--gradient);
-    color: var(--white);
+    color: var(--text-dark);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -103,7 +103,7 @@ body {
 }
 
 .highlight {
-    color: #fbbf24;
+    color: var(--primary-dark);
     font-weight: 800;
 }
 
@@ -144,13 +144,13 @@ body {
 
 .btn-secondary {
     background: transparent;
-    color: var(--white);
-    border: 2px solid var(--white);
+    color: var(--primary-dark);
+    border: 2px solid var(--primary-dark);
 }
 
 .btn-secondary:hover {
-    background: var(--white);
-    color: var(--primary-color);
+    background: var(--primary-dark);
+    color: var(--white);
 }
 
 .btn-large {
@@ -459,29 +459,7 @@ body {
 /* Remove estilos de acordeão */
 .faq-question, .faq-question::after, .faq-item.active .faq-answer, .faq-answer { all: unset; }
 
-/* WhatsApp Button Styles */
-.btn-whatsapp {
-    background: #25D366;
-    color: white;
-    border: 2px solid #25D366;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-    font-weight: 600;
-}
-
-.btn-whatsapp:hover {
-    background: #128C7E;
-    border-color: #128C7E;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
-}
-
-.whatsapp-icon-small {
-    display: inline-flex;
-    align-items: center;
-}
+/* WhatsApp Button Styles - removido para evitar duplicação */
 
 /* WhatsApp Floating Button */
 .whatsapp-float {
