@@ -108,52 +108,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Acordeão do FAQ
-    const faqItems = document.querySelectorAll('.quadro-faq .quadro-faq-item');
-    faqItems.forEach(item => {
-        const question = item.querySelector('.quadro-faq-question');
-        const answer = item.querySelector('.quadro-faq-answer');
-        if (!question || !answer) return;
-
-        // Estado inicial: colapsado
-        item.classList.remove('active');
-        question.setAttribute('role', 'button');
-        question.setAttribute('tabindex', '0');
-        question.setAttribute('aria-expanded', 'false');
-        answer.setAttribute('aria-hidden', 'true');
-
-        const toggle = () => {
-            const isActive = item.classList.toggle('active');
-            question.setAttribute('aria-expanded', String(isActive));
-            answer.setAttribute('aria-hidden', String(!isActive));
-        };
-
-        question.addEventListener('click', toggle);
-        question.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggle();
-            }
-        });
-    });
-
     // FAQ Accordion functionality
     const faqQuestions = document.querySelectorAll('.faq-question');
     
     faqQuestions.forEach(question => {
         question.addEventListener('click', function() {
             const faqItem = this.parentElement;
-            const faqAnswer = faqItem.querySelector('.faq-answer');
             const isActive = faqItem.classList.contains('active');
             
-            // Fechar todas as outras perguntas
-            document.querySelectorAll('.faq-item.active').forEach(item => {
-                if (item !== faqItem) {
-                    item.classList.remove('active');
-                }
-            });
-            
-            // Toggle da pergunta atual
+            // Toggle simples: clicar uma vez abre, clicar novamente fecha
             if (isActive) {
                 faqItem.classList.remove('active');
             } else {
