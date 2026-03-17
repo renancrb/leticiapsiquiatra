@@ -15,7 +15,6 @@
     --text-light: #6b7280;
     --white: #ffffff;
     --gradient: linear-gradient(135deg, #faf5ff 0%, #ede9fe 40%, #e4dfff 70%, #d8c9ff 100%);
-    --whatsapp-green: #25D366;
 }
 
 body {
@@ -51,7 +50,7 @@ body {
 .logo h1 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--primary-dark);
     margin-bottom: 0.25rem;
 }
 
@@ -100,10 +99,11 @@ body {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1.5rem;
+    color: var(--primary-dark);
 }
 
 .highlight {
-    color: var(--primary-dark);
+    color: #fbbf24;
     font-weight: 800;
 }
 
@@ -111,6 +111,7 @@ body {
     font-size: 1.25rem;
     margin-bottom: 2rem;
     opacity: 0.9;
+    color: var(--text-dark);
 }
 
 .cta-buttons {
@@ -132,18 +133,18 @@ body {
 }
 
 .btn-primary {
-    background: var(--white);
-    color: var(--primary-dark);
+    background: var(--primary-dark);
+    color: var(--white);
 }
 
 .btn-primary:hover {
-    background: #f3f4f6;
+    background: #594aa0; /* tom um pouco mais escuro */
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary {
-    background: transparent;
+    background: var(--white);
     color: var(--primary-dark);
     border: 2px solid var(--primary-dark);
 }
@@ -181,7 +182,7 @@ body {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--text-dark);
+    color: var(--primary-dark);
 }
 
 .pain-grid {
@@ -212,7 +213,7 @@ body {
 .pain-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: var(--primary-dark);
 }
 
 .cta-center {
@@ -234,7 +235,7 @@ body {
 .about-text h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    color: var(--text-dark);
+    color: var(--primary-dark);
 }
 
 .about-text p {
@@ -272,7 +273,7 @@ body {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--text-dark);
+    color: var(--primary-dark);
 }
 
 .services-grid {
@@ -297,7 +298,7 @@ body {
 .service-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: var(--primary-dark);
 }
 
 /* Conditions Section */
@@ -309,7 +310,7 @@ body {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--text-dark);
+    color: var(--primary-dark);
 }
 
 .conditions-grid {
@@ -328,7 +329,7 @@ body {
 .condition-category h3 {
     font-size: 1.25rem;
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: var(--primary-dark);
 }
 
 .condition-category ul {
@@ -344,7 +345,7 @@ body {
     border-bottom: none;
 }
 
-/* Testimonials Section */
+/* Testimonials Section (Doctoralia) */
 .testimonials {
     padding: 80px 0;
     background: var(--secondary-color);
@@ -354,8 +355,75 @@ body {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--text-dark);
+    color: var(--primary-dark);
 }
+
+/* Estilos do carrossel de fallback */
+.testimonial-carousel {
+    position: relative;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.testimonial-carousel .slides {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: var(--white);
+}
+
+.testimonial-carousel .slide {
+    display: none;
+}
+
+.testimonial-carousel .slide.active {
+    display: block;
+}
+
+.testimonial-carousel img {
+    width: 100%;
+    display: block;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-dark);
+    color: var(--white);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.carousel-control.prev { left: 12px; }
+.carousel-control.next { right: 12px; }
+
+.carousel-control:hover { background: #594aa0; }
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.carousel-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-dark);
+    background: transparent;
+    cursor: pointer;
+}
+
+.carousel-dots .dot.active { background: var(--primary-dark); }
 
 .testimonials-grid {
     display: grid;
@@ -414,308 +482,77 @@ body {
     color: var(--text-light);
 }
 
-/* FAQ Section - Acordeão */
-.faq {
-    padding: 80px 0;
-    background: var(--secondary-color);
+/* FAQ Section - Quadro Fixo */
+.quadro-faq {
+  padding: 80px 0;
+  background: var(--secondary-color);
 }
 
-.faq h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: var(--text-dark);
+.quadro-faq h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--primary-dark);
 }
 
 .faq-list {
-    max-width: 800px;
-    margin: 0 auto;
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.25rem;
 }
 
-.faq-item {
-    background: var(--white);
-    border-radius: 18px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 6px 24px rgba(124, 106, 199, 0.07);
-    border: 1.5px solid var(--primary-light);
-    overflow: hidden;
-    transition: all 0.3s ease;
+.quadro-faq-item {
+  background: var(--white);
+  border-radius: 18px;
+  margin-bottom: 0; /* gap do grid controla o espaçamento */
+  padding: 1.75rem 2rem;
+  box-shadow: 0 6px 24px rgba(124, 106, 199, 0.07);
+  border: 1.5px solid var(--primary-light);
+  transition: box-shadow 0.3s;
 }
 
-.faq-question {
-    padding: 1.5rem 2rem;
-    font-size: 1.18rem;
-    font-weight: 700;
-    color: var(--primary-dark);
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.3s ease;
-    user-select: none;
+.quadro-faq-question {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 0;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
 }
 
-.faq-question:hover {
-    background: rgba(124, 106, 199, 0.05);
+/* Seta indicativa do acordeão */
+.quadro-faq-question::after {
+  content: '\25B6'; /* triângulo para a direita */
+  font-size: 0.9rem;
+  color: var(--primary-dark);
+  margin-left: 0.75rem;
+  transition: transform 0.25s ease;
 }
 
-.faq-arrow {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    transition: transform 0.3s ease;
+.quadro-faq-item.active .quadro-faq-question::after {
+  transform: rotate(90deg); /* seta apontando para baixo */
 }
 
-.faq-item.active .faq-arrow {
-    transform: rotate(90deg);
+.quadro-faq-answer {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-top: 0.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
 }
 
-.faq-answer {
-    padding: 0 2rem 1.5rem 2rem;
-    font-size: 1.05rem;
-    color: var(--text-light);
-    line-height: 1.7;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
+.quadro-faq-item.active .quadro-faq-answer {
+  max-height: 500px; /* suficiente para conteúdos curtos */
 }
 
-.faq-item.active .faq-answer {
-    max-height: 500px;
-    padding: 0 2rem 1.5rem 2rem;
-}
-
-/* WhatsApp Button Styles - removido para evitar duplicação */
-
-/* WhatsApp Floating Button */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999;
-    pointer-events: none;
-}
-
-.whatsapp-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #25d366;
-    color: white;
-    padding: 12px 15px;
-    border-radius: 25px;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-    transition: all 0.3s ease;
-    font-size: 14px;
-    font-weight: 600;
-    white-space: nowrap;
-    pointer-events: auto;
-    max-width: 200px;
-}
-
-.whatsapp-button:hover {
-    background: #20ba5a;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
-    color: white;
-    text-decoration: none;
-}
-
-.whatsapp-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-    flex-shrink: 0;
-}
-
-.whatsapp-text {
-    font-weight: 600;
-    font-size: 14px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* WhatsApp Floating Button - Versão Simples */
-.whatsapp-float-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background: #25d366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-    transition: all 0.3s ease;
-    z-index: 9999;
-}
-
-.whatsapp-float-btn:hover {
-    background: #20ba5a;
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
-    color: white;
-    text-decoration: none;
-}
-
-.whatsapp-float-btn svg {
-    width: 28px;
-    height: 28px;
-}
-
-/* Responsividade do botão flutuante */
-@media (max-width: 768px) {
-    .whatsapp-float-btn {
-        width: 55px;
-        height: 55px;
-        bottom: 15px;
-        right: 15px;
-    }
-    
-    .whatsapp-float-btn svg {
-        width: 24px;
-        height: 24px;
-    }
-}
-
-@media (max-width: 480px) {
-    .whatsapp-float-btn {
-        width: 50px;
-        height: 50px;
-        bottom: 12px;
-        right: 12px;
-    }
-    
-    .whatsapp-float-btn svg {
-        width: 22px;
-        height: 22px;
-    }
-}
-
-/* Botões WhatsApp adicionais nas seções */
-.btn-whatsapp {
-    background: #25d366 !important;
-    color: white !important;
-    border: 2px solid #25d366 !important;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.btn-whatsapp:hover {
-    background: #20ba5a !important;
-    border-color: #20ba5a !important;
-    transform: translateY(-2px);
-    color: white !important;
-}
-
-.whatsapp-icon-small {
-    width: 16px;
-    height: 16px;
-}
-
-/* Botão WhatsApp redimensionado para seções específicas */
-.btn-whatsapp-small {
-    padding: 0.8rem 1.5rem !important;
-    font-size: 0.95rem !important;
-    gap: 6px !important;
-}
-
-.btn-whatsapp-small .whatsapp-icon-small {
-    width: 14px;
-    height: 14px;
-}
-
-/* Responsividade do WhatsApp */
-@media (max-width: 768px) {
-    .whatsapp-float {
-        bottom: 15px;
-        right: 15px;
-    }
-    
-    .whatsapp-button {
-        padding: 10px 12px;
-        font-size: 13px;
-        max-width: 160px;
-    }
-    
-    .whatsapp-text {
-        font-size: 12px;
-    }
-    
-    .whatsapp-icon {
-        width: 18px;
-        height: 18px;
-        margin-right: 6px;
-    }
-}
-
-@media (max-width: 480px) {
-    .whatsapp-float {
-        bottom: 12px;
-        right: 12px;
-    }
-    
-    .whatsapp-button {
-        padding: 8px 10px;
-        font-size: 12px;
-        max-width: 140px;
-    }
-    
-    .whatsapp-text {
-        display: none; /* Esconde o texto em telas muito pequenas */
-    }
-    
-    .whatsapp-icon {
-        width: 20px;
-        height: 20px;
-        margin-right: 0;
-    }
-}
-
-/* Animação de pulso para chamar atenção */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* Responsivo para mobile */
-@media (max-width: 768px) {
-    .whatsapp-float {
-        bottom: 15px;
-        right: 15px;
-    }
-    
-    .whatsapp-button {
-        padding: 10px 12px;
-        font-size: 12px;
-    }
-    
-    .whatsapp-text {
-        display: none; /* Esconde o texto no mobile, deixa só o ícone */
-    }
-    
-    .whatsapp-button {
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        padding: 0;
-        justify-content: center;
-    }
-}
+/* Acordeão ativo no FAQ */
+/* Removemos quaisquer resets que ocultavam a seta/estado */
 
 /* CTA Section */
 .cta-section {
@@ -728,14 +565,13 @@ body {
 .cta-content h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--text-dark);
+    color: var(--primary-dark);
 }
 
 .cta-content p {
     font-size: 1.25rem;
     margin-bottom: 2rem;
-    color: var(--text-dark);
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .cta-features {
@@ -848,4 +684,17 @@ body {
         width: 250px;
         height: 250px;
     }
+}
+
+/* Responsividade específica FAQ */
+@media (max-width: 768px) {
+  .faq-list { gap: 1rem; }
+  .quadro-faq-item { padding: 1.25rem 1.25rem; }
+  .quadro-faq-question { font-size: 1.0625rem; }
+  .quadro-faq-answer { font-size: 0.9875rem; line-height: 1.65; }
+}
+
+@media (max-width: 768px) {
+    .testimonial-carousel { max-width: 100%; }
+    .carousel-control { width: 36px; height: 36px; }
 }
