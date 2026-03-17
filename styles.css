@@ -859,3 +859,11 @@ body {
     .testimonial-carousel { max-width: 100%; }
     .carousel-control { width: 36px; height: 36px; }
 }
+
+.condition-item { border-bottom: 1px solid rgba(124,106,199,0.15); padding: 0.25rem 0; }
+.condition-toggle { background: none; border: none; width: 100%; text-align: left; font-size: 1rem; font-weight: 600; color: var(--primary-dark); padding: 0.6rem 0; cursor: pointer; display: flex; justify-content: space-between; }
+.condition-toggle::after { content: '▶'; font-size: 0.75rem; transition: transform 0.25s; }
+.condition-item.active .condition-toggle::after { transform: rotate(90deg); }
+.condition-detail { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; font-size: 0.95rem; color: #6b7280; }
+.condition-detail p { padding: 0.5rem 0; }
+.condition-item.active .condition-detail { max-height: 400px; }
