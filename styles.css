@@ -623,7 +623,8 @@ body {
 /* Botão WhatsApp redimensionado para seções específicas */
 .btn-whatsapp-small {
     padding: 0.8rem 1.5rem !important;
-    font-size: 0.9rem !important;
+    font-size: 0.95rem !important;
+    gap: 6px !important;
 }
 
 .btn-whatsapp-small .whatsapp-icon-small {
