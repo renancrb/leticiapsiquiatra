@@ -109,30 +109,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Acordeão do FAQ
-    const faqItems = document.querySelectorAll('.quadro-faq .quadro-faq-item');
+    const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
-        const question = item.querySelector('.quadro-faq-question');
-        const answer = item.querySelector('.quadro-faq-answer');
-        if (!question || !answer) return;
-
-        // Estado inicial: colapsado
-        item.classList.remove('active');
-        question.setAttribute('role', 'button');
-        question.setAttribute('tabindex', '0');
-        question.setAttribute('aria-expanded', 'false');
-        answer.setAttribute('aria-hidden', 'true');
-
-        const toggle = () => {
-            const isActive = item.classList.toggle('active');
-            question.setAttribute('aria-expanded', String(isActive));
-            answer.setAttribute('aria-hidden', String(!isActive));
-        };
-
-        question.addEventListener('click', toggle);
-        question.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggle();
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', function() {
+            const isActive = item.classList.contains('active');
+            
+            // Fechar todos os outros items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Toggle do item atual
+            if (isActive) {
+                item.classList.remove('active');
+            } else {
+                item.classList.add('active');
             }
         });
     });
