@@ -108,11 +108,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Acordeão do FAQ
-    const faqItems = document.querySelectorAll('.quadro-faq .quadro-faq-item');
+    // Acordeão do FAQ - Classes corretas para o HTML atual
+    const faqItems = document.querySelectorAll('.faq .faq-item');
     faqItems.forEach(item => {
-        const question = item.querySelector('.quadro-faq-question');
-        const answer = item.querySelector('.quadro-faq-answer');
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
         if (!question || !answer) return;
 
         // Estado inicial: colapsado
