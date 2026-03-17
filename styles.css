@@ -647,6 +647,18 @@ body {
     display: block; /* Visível quando ativo */
 }
 
+.faq-question::after {
+    content: '\25B6'; /* triângulo para a direita */
+    font-size: 0.9rem;
+    color: var(--primary-dark);
+    margin-left: 0.75rem;
+    transition: transform 0.25s ease;
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(90deg); /* seta apontando para baixo */
+}
+
 /* CTA Section */
 .cta-section {
     padding: 80px 0;
