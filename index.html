@@ -215,6 +215,16 @@
                 <a href="https://www.doctoralia.com.br/leticia-coelho-3/psiquiatra/recife" class="btn btn-primary">Agendar avaliação personalizada</a>
             </div>
         </div>
+        <script>
+document.querySelectorAll('.condition-toggle').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const item = this.parentElement;
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.condition-item').forEach(i => i.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+    });
+});
+</script>
     </section>
 
     <!-- Testimonials Section (Doctoralia) -->
