@@ -255,6 +255,31 @@
         </div>
     </section>
 
+    <script>
+    // Script de teste para FAQ
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM carregado');
+        
+        const faqItems = document.querySelectorAll('.faq-item');
+        console.log('FAQ items encontrados:', faqItems.length);
+        
+        faqItems.forEach((item, index) => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            
+            console.log(`Item ${index}:`, { question: !!question, answer: !!answer });
+            
+            if (question && answer) {
+                question.addEventListener('click', function() {
+                    console.log('Clique no item', index);
+                    item.classList.toggle('active');
+                    console.log('Classe active:', item.classList.contains('active'));
+                });
+            }
+        });
+    });
+    </script>
+
     <!-- CTA Section -->
     <section id="agendar" class="cta-section">
         <div class="container">
