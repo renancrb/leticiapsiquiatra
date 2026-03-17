@@ -178,14 +178,14 @@ body {
 /* Pain Points Section */
 .pain-points {
     padding: 80px 0;
-    background: var(--secondary-color);
+    background: var(--white);
 }
 
 .pain-points h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--text-dark);
+    color: var(--primary-color);
 }
 
 .pain-grid {
@@ -226,6 +226,7 @@ body {
 /* About Section */
 .about {
     padding: 80px 0;
+    background: var(--secondary-color);
 }
 
 .about-content {
@@ -238,7 +239,7 @@ body {
 .about-text h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    color: var(--text-dark);
+    color: var(--primary-color);
 }
 
 .about-text p {
@@ -269,14 +270,14 @@ body {
 /* Services Section */
 .services {
     padding: 80px 0;
-    background: var(--secondary-color);
+    background: var(--white);
 }
 
 .services h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--text-dark);
+    color: var(--primary-color);
 }
 
 .services-grid {
@@ -307,13 +308,14 @@ body {
 /* Conditions Section */
 .conditions {
     padding: 80px 0;
+    background: var(--secondary-color);
 }
 
 .conditions h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--text-dark);
+    color: var(--primary-color);
 }
 
 .conditions-grid {
@@ -351,14 +353,14 @@ body {
 /* Testimonials Section */
 .testimonials {
     padding: 80px 0;
-    background: var(--secondary-color);
+    background: var(--white);
 }
 
 .testimonials h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--text-dark);
+    color: var(--primary-color);
 }
 
 .testimonials-grid {
@@ -503,7 +505,7 @@ body {
 /* CTA Section */
 .cta-section {
     padding: 80px 0;
-    background: var(--gradient);
+    background: var(--primary-color);
     color: var(--white);
     text-align: center;
 }
@@ -511,12 +513,14 @@ body {
 .cta-content h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: var(--white);
 }
 
 .cta-content p {
     font-size: 1.25rem;
     margin-bottom: 2rem;
-    opacity: 0.9;
+    color: var(--white);
+    opacity: 0.95;
 }
 
 .cta-features {
@@ -536,6 +540,21 @@ body {
 
 .feature-icon {
     font-size: 1.5rem;
+}
+
+.cta-section .btn-primary {
+    background: var(--white);
+    color: var(--primary-color);
+    font-weight: 700;
+    padding: 1.25rem 2.5rem;
+    border: 2px solid var(--white);
+}
+
+.cta-section .btn-primary:hover {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+    transform: translateY(-2px);
 }
 
 /* Footer */
