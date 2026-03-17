@@ -230,14 +230,57 @@ document.querySelectorAll('.condition-toggle').forEach(btn => {
     <!-- Testimonials Section (Doctoralia) -->
     <section id="depoimentos" class="testimonials">
         <div class="container">
-            <h2>O que minhas pacientes dizem</h2>
-            <div id="doctoralia-widget" class="doctoralia-rating">
-                <p>Carregando avaliações em tempo real…</p>
-            </div>
-            <div class="cta-center" style="margin-top: 1.5rem;">
-                <a href="https://www.doctoralia.com.br/leticia-coelho-3/psiquiatra/recife" class="btn btn-secondary" target="_blank">Ver depoimentos no Doctoralia</a>
-            </div>
+            <h2>O que dizem quem já deu esse passo</h2>
+<p style="text-align: center; font-size: 1.1em; color: #6b7280; margin-bottom: 3rem;"><em>Opiniões verificadas de pacientes.</em></p>
+
+<div class="testimonial-carousel">
+    <div class="slides">
+        <div class="slide active">
+            <img src="depoimento-1.jpg" alt="Avaliação verificada - Doctoralia" width="800" height="420" style="object-fit: cover;">
         </div>
+        <div class="slide">
+            <img src="depoimento-2.jpg" alt="Avaliação verificada - Doctoralia" width="800" height="420" style="object-fit: cover;">
+        </div>
+        <div class="slide">
+            <img src="depoimento-3.jpg" alt="Avaliação verificada - Doctoralia" width="800" height="420" style="object-fit: cover;">
+        </div>
+        <div class="slide">
+            <img src="depoimento-4.jpg" alt="Avaliação verificada - Doctoralia" width="800" height="420" style="object-fit: cover;">
+        </div>
+    </div>
+    <button class="carousel-control prev">&#8592;</button>
+    <button class="carousel-control next">&#8594;</button>
+    <div class="carousel-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+
+<div class="cta-center" style="margin-top: 1.5rem;">
+    <a href="https://www.doctoralia.com.br/leticia-coelho-3/psiquiatra/recife" class="btn btn-secondary" target="_blank">Ver todas as avaliações no Doctoralia →</a>
+</div>
+        </div>
+        <script>
+(function() {
+    const slides = document.querySelectorAll('.testimonial-carousel .slide');
+    const dots = document.querySelectorAll('.carousel-dots .dot');
+    let current = 0;
+
+    function goTo(n) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (n + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+    }
+
+    document.querySelector('.carousel-control.prev').addEventListener('click', () => goTo(current - 1));
+    document.querySelector('.carousel-control.next').addEventListener('click', () => goTo(current + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+})();
+</script>
     </section>
 <!-- FAQ Section -->
 <section class="faq">
