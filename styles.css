@@ -461,7 +461,9 @@ body {
 
 .testimonial-carousel img {
     width: 100%;
+    height: auto;
     display: block;
+    max-width: 100%;
 }
 
 .carousel-control {
@@ -856,8 +858,19 @@ body {
 }
 
 @media (max-width: 768px) {
-    .testimonial-carousel { max-width: 100%; }
-    .carousel-control { width: 36px; height: 36px; }
+    .testimonial-carousel { 
+        max-width: 100%; 
+        margin: 0 10px;
+    }
+    .testimonial-carousel .slides {
+        border-radius: 10px;
+    }
+    .carousel-control { 
+        width: 36px; 
+        height: 36px; 
+    }
+    .carousel-control.prev { left: 8px; }
+    .carousel-control.next { right: 8px; }
 }
 
 .condition-item { border-bottom: 1px solid rgba(124,106,199,0.15); padding: 0.25rem 0; }
