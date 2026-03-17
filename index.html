@@ -265,10 +265,35 @@
 </section>
 
 <script>
-document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-        const item = button.parentElement;
-        item.classList.toggle('active');
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('FAQ Script carregado');
+    
+    // FAQ Accordion functionality
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    console.log('FAQ questions encontradas:', faqQuestions.length);
+    
+    faqQuestions.forEach((button, index) => {
+        button.addEventListener('click', function() {
+            console.log('Clique na pergunta:', index);
+            
+            const faqItem = this.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            console.log('Item estava ativo:', isActive);
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Toggle current item
+            if (!isActive) {
+                faqItem.classList.add('active');
+                console.log('Item ativado');
+            } else {
+                console.log('Item desativado');
+            }
+        });
     });
 });
 </script>

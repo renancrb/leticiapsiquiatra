@@ -589,7 +589,7 @@ body {
     color: var(--primary-dark);
 }
 
-.faq-list {
+.faq .container {
     max-width: 800px;
     margin: 0 auto;
     display: grid;

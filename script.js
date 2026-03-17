@@ -107,35 +107,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
-    // Acordeão do FAQ - Classes corretas para o HTML atual
-    const faqItems = document.querySelectorAll('.faq .faq-item');
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-        if (!question || !answer) return;
-
-        // Estado inicial: colapsado
-        item.classList.remove('active');
-        question.setAttribute('role', 'button');
-        question.setAttribute('tabindex', '0');
-        question.setAttribute('aria-expanded', 'false');
-        answer.setAttribute('aria-hidden', 'true');
-
-        const toggle = () => {
-            const isActive = item.classList.toggle('active');
-            question.setAttribute('aria-expanded', String(isActive));
-            answer.setAttribute('aria-hidden', String(!isActive));
-        };
-
-        question.addEventListener('click', toggle);
-        question.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggle();
-            }
-        });
-    });
 });
 
 // Carregar widget do Doctoralia (substitua pelos IDs reais quando disponíveis)
